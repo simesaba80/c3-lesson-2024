@@ -1,0 +1,26 @@
+{
+    "name": "Next.js App",
+    "build": {
+      "dockerfile": "Dockerfile",
+      "context": "..",
+      "args": { 
+        "VARIANT": "14"
+      }
+    },
+    "runArgs": [
+      "-u",
+      "node"
+    ],
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.shell.linux": "/bin/bash"
+			},
+			"extensions": [
+				"dbaeumer.vscode-eslint"
+			]
+		}
+	},
+    "postCreateCommand": "pnpm install",
+    "forwardPorts": [3000]
+}
